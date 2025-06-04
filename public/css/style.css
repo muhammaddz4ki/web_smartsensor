@@ -1,0 +1,480 @@
+/* ======================== GOOGLE FONTS ======================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* ======================== VARIABEL CSS ======================== */
+:root {
+  /* ========== COLORS ========== */
+  --first-color: #0a2647;
+  --second-color: #2b84e3;
+  --text-color: #ffff;
+  --secondary-text-color: #999999;
+
+  /* ========== FONT AND TYPOGRAPHY ========== */
+  --font-primary: "Poppins", sans-serif;
+
+  /* ========== FONT WEIGHT ========== */
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  /* ========== Z INDEX ========== */
+  --z-index-below: -1;
+  --z-index-default: 1;
+  --z-index-above: 10;
+  --z-index-top: 100;
+}
+
+/* ======================== BASE CSS ======================== */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--first-color);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ======================== REUSABLE CSS ======================== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ======================== HEADER & NAV ======================== */
+
+nav {
+  width: 100%;
+  padding: 30px 0px;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav .nav__logo h2 {
+  color: var(--text-color);
+  font-size: 20px;
+  font-style: italic;
+  font-weight: var(--font-weight-bold);
+}
+
+nav .nav__logo img {
+  width: 40px;
+}
+
+nav .nav__menu {
+  display: flex;
+  align-items: center;
+}
+
+nav .nav__menu ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+nav .nav__menu ul li a {
+  color: var(--text-color);
+}
+
+nav .nav__menu ul li a:hover {
+  color: #144272;
+}
+
+nav .nav__menu .button {
+  margin-left: 20px;
+}
+
+nav .nav__menu .button a {
+  padding: 10px 20px;
+  border: 1px solid var(--text-color);
+  border-radius: 10px;
+  transition: all 0.1s ease-in-out;
+  color: var(--text-color);
+}
+
+nav .nav__menu .button a:hover {
+  background-color: var(--text-color);
+  color: var(--first-color);
+}
+
+.navbar_active {
+  background-color: var(--first-color);
+  transition: all 0.2s ease-in;
+}
+
+/* ======================== HOME ======================== */
+
+.home {
+  padding-top: 100px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.home .home__title h1 {
+  font-size: 45px;
+  color: var(--text-color);
+}
+
+.home .home__title span {
+  color: var(--second-color);
+}
+
+.home .home__title p {
+  font-weight: 700;
+  color: var(--secondary-text-color);
+  font-size: 15px;
+  margin: 30px 0px;
+}
+
+.home .home__title a {
+  padding: 10px 20px;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.home .home__title a:hover {
+  color: #0a2647;
+  background-color: var(--text-color);
+}
+
+.home .home__img img {
+  width: 800px;
+  animation: fly 3s ease-in-out infinite;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ======================== SERVICES ======================== */
+.services__page {
+  padding-top: 100px;
+  height: 100vh;
+}
+
+.services .services__title {
+  text-align: center;
+}
+
+.services .services__title h1 {
+  font-size: 50px;
+  color: var(--text-color);
+}
+
+.services .services__title span {
+  color: var(--second-color);
+}
+
+.services .services__title p {
+  color: var(--secondary-text-color);
+  font-weight: 500;
+  margin-bottom: 70px;
+}
+
+.services .services__card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.services .services__card .card {
+  height: 400px;
+  width: 300px;
+  background-color: var(--text-color);
+  border-radius: 15px;
+  padding: 20px;
+  color: black;
+  transition: all 0.4s ease-in-out;
+}
+
+.services .services__card .card:hover {
+  transform: scale(1.1);
+}
+
+.services .services__card .card img {
+  border-radius: 15px;
+}
+
+.services .services__card .card h1 {
+  margin: 10px 0px;
+}
+
+/* ======================== SOLUTIONS ======================== */
+.solutions {
+  padding-top: 100px;
+  height: 100vh;
+}
+
+.solutions .solutions__title {
+  text-align: center;
+}
+
+.solutions .solutions__title h1 {
+  font-size: 50px;
+  color: var(--text-color);
+}
+
+.solutions .solutions__title span {
+  color: var(--second-color);
+}
+
+.solutions .solutions__title p {
+  color: var(--secondary-text-color);
+  font-weight: 500;
+  margin-bottom: 70px;
+}
+
+.solutions .solutions_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.solutions .solutions_content .sol__img img {
+  width: 400px;
+}
+
+/* ======================== CONTACT ======================== */
+
+.contact {
+  /* hilangkan padding-top agar bisa vertikal center */
+  /* padding-top: 100px; */
+  
+  /* pakai flex untuk centering */
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+
+  height: 100vh;
+  padding: 0 20px; /* beri padding horizontal agar tidak mepet */
+  box-sizing: border-box;
+}
+
+.contact .contact__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  flex-wrap: wrap; /* responsif, turun ke bawah jika layar sempit */
+  max-width: 900px;
+  width: 100%;
+  
+  /* geser ke kanan sedikit */
+  margin-left: 90px;
+}
+
+.contact .contact__content .contact__form h1 {
+  position: relative;
+  font-size: 40px;
+  color: var(--text-color);
+}
+
+.contact .contact__content .contact__form h1::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 4px;
+  background-color: var(--text-color);
+}
+
+.contact .contact__content .contact__form span {
+  color: var(--second-color);
+}
+
+.contact .contact__content .contact__form form {
+  max-width: 300px;
+  background: transparent;
+  padding: 30px 0px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.contact .contact__content .contact__form form input,
+.contact .contact__content .contact__form form textarea {
+  font-size: 0.8rem;  /* tambahkan satuan rem */
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.contact .contact__content .contact__form form textarea {
+  height: 200px;
+  resize: none;
+}
+
+.contact .contact__content .contact__form form button {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: var(--first-color);
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* ======================== FOOTER ======================== */
+footer {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+footer img {
+  width: 300px;
+  margin: auto;
+}
+
+footer p {
+  color: var(--text-color);
+}
+
+.logo__footer h1 {
+  font-style: italic;
+  color: var(--text-color);
+}
+
+.menu__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 50px 0px;
+}
+
+.menu__footer a {
+  background-color: var(--text-color);
+  padding: 10px 15px;
+  border-radius: 50%;
+  color: var(--first-color);
+  transition: all 0.2s ease-in-out;
+}
+
+.menu__footer a:hover {
+  color: var(--text-color);
+  background-color: var(--first-color);
+}
+
+/* ======================== LOGIN ======================== */
+
+/* ======================== RESPONSIVES ======================== */
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+
+  nav .nav__menu {
+    display: none;
+  }
+
+  .home {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .home .home__img {
+    order: 1;
+  }
+
+  .home .home__img img {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .home .home__title {
+    order: -1;
+  }
+
+  .home .home__title h1 {
+    font-size: 35px;
+  }
+}
+
+/* ======================== STATS ======================== */
+.stats__cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.stat__card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 2rem 2.5rem;
+  text-align: center;
+  min-width: 180px;
+  transition: box-shadow 0.2s;
+}
+
+.stat__card h2,
+.stat__card p {
+  color: #fff;
+}
+
+.stat__card p {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
